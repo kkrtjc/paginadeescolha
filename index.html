@@ -360,9 +360,13 @@
             .hero-subtitle {
                 font-size: 15px;
             }
+
+            /* Removido ajuste de altura fixa, agora usa aspect ratio */
+            /* .card-image {
+                height: 140px;
+            } */
         }
 
-        /* Removendo a regra que forçava a coluna única em 768px para manter o layout de duas colunas */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -381,9 +385,8 @@
                 padding: 20px 12px;
             }
 
-            /* Mantendo o grid de duas colunas e ajustando o gap para telas menores */
             .cards-container {
-                grid-template-columns: 1fr 1fr; /* Mantém as duas colunas */
+                grid-template-columns: 1fr;
                 gap: 15px;
             }
 
@@ -398,6 +401,11 @@
             .hero-subtitle {
                 font-size: 14px;
             }
+
+            /* Removido ajuste de altura fixa, agora usa aspect ratio */
+            /* .card-image {
+                height: 130px;
+            } */
 
             .card-content {
                 padding: 14px;
@@ -463,11 +471,14 @@
                 font-size: 12px;
             }
 
-            /* Mantendo o grid de duas colunas e ajustando o gap para telas menores */
             .cards-container {
-                grid-template-columns: 1fr 1fr; /* Mantém as duas colunas */
                 gap: 12px;
             }
+
+            /* Removido ajuste de altura fixa, agora usa aspect ratio */
+            /* .card-image {
+                height: 120px;
+            } */
 
             .card-content {
                 padding: 12px;
@@ -553,7 +564,7 @@
                                 <li>Calendário de vacinação</li>
                             </ul>
                             <div class="card-price">
-                        
+                                <span class="old-price">R$ 127,00</span>R$ 84,90
                             </div>
                             <button class="cta-button" onclick="window.location.href='https://o-segredo.pages.dev/'">
                                 Acessar Agora
@@ -579,7 +590,7 @@
                                 <li>Técnicas comprovadas</li>
                             </ul>
                             <div class="card-price">
-                            
+                                <span class="old-price">R$ 97,00</span>R$ 54,90
                             </div>
                             <button class="cta-button" onclick="window.location.href='https://pitinhospaginainicial.pages.dev/'">
                                 Acessar Agora
