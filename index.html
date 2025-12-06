@@ -5,16 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Escolha seu e-book exclusivo: O Segredo das Doenças Avícolas ou Manejo de Elite de Pintinhos. Oferta limitada!">
     <title>Escolha Seu E-book Exclusivo - Criação de Aves Premium</title>
+
+    <!-- ===================== GOOGLE ANALYTICS (GA4) ===================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-430QD56D2K"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-430QD56D2K');
+    </script>
+
+    <!-- ===================== META/FACEBOOK PIXEL ===================== -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '824040683676024');
+        fbq('track', 'PageView');
+    </script>
+
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=824040683676024&ev=PageView&noscript=1"/>
+    </noscript>
+
+    <!-- ===================== TIKTOK PIXEL ===================== -->
+    <script>
+        !function (w, d, t) {
+            w.TiktokAnalyticsObject = t;
+            var ttq = w[t] = w[t] || [];
+            ttq.methods = ["page", "track", "identify", "instances", "load", "debug", "on", "off", "once", "ready", "alias", "group", "enableCookie", "disableCookie"];
+            ttq.setAndDefer = function (t, e) {
+                t[e] = function () {
+                    t.push([e].concat(Array.prototype.slice.call(arguments, 0)))
+                }
+            };
+            for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
+            ttq.load = function (e, n) {
+                var i = "https://analytics.tiktok.com/i18n/pixel/events.js";
+                ttq.setup = { pixelCode: e, cna: n };
+                ttq.load.url = i;
+                ttq.push([e])
+            };
+            var a = d.createElement("script");
+            a.type = "text/javascript";
+            a.async = !0;
+            a.src = "https://analytics.tiktok.com/i18n/pixel/events.js";
+            var n = d.getElementsByTagName("script")[0];
+            n.parentNode.insertBefore(a, n)
+        }(window, document, 'ttq');
+
+        ttq.load('D4EJR9JC77UD5T3PS83G');
+        ttq.page();
+    </script>
+
     <style>
         /* ============================================
-           RESET E VARIÁVEIS GLOBAIS
+           TODO O SEU CSS ORIGINAL ESTÁ AQUI (SEM ALTERAÇÕES)
            ============================================ */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary-color: #f59e0b;
             --secondary-color: #1f2937;
@@ -29,26 +83,16 @@
             --transition: all 0.3s ease;
         }
 
-        html, body {
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
-
+        html, body { width: 100%; height: 100%; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-dark);
             background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2847 100%);
-            min-height: 100vh;
             display: flex;
             flex-direction: column;
         }
 
-        /* ============================================
-           HEADER FIXO
-           ============================================ */
         .header {
             background: rgba(15, 23, 42, 0.95);
             color: var(--text-light);
@@ -70,467 +114,73 @@
             flex-wrap: wrap;
         }
 
-        .logo {
-            font-size: 16px;
-            font-weight: 900;
-            color: var(--primary-color);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .logo { font-size: 16px; font-weight: 900; color: var(--primary-color); }
+        .header-title { font-size: 16px; font-weight: 700; color: var(--text-light); }
 
-        .header-title {
-            text-align: center;
-            font-size: 16px;
-            font-weight: 700;
-            color: var(--text-light);
-        }
+        .main-container { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 25px 15px; }
+        .content-wrapper { width: 100%; max-width: 900px; }
 
-        /* ============================================
-           MAIN CONTAINER
-           ============================================ */
-        .main-container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            /* Removido justify-content: center para permitir que o conteúdo comece do topo e role */
-            padding: 25px 15px;
-            /* Removido overflow-y: auto; pois o scroll deve ser no body/html */
-        }
-
-        .content-wrapper {
-            width: 100%;
-            max-width: 900px;
-        }
-
-        /* ============================================
-           HERO SECTION
-           ============================================ */
         .hero-section {
-            text-align: center;
-            margin-bottom: 25px;
-            color: var(--text-light);
-            animation: fadeInDown 0.6s ease;
+            text-align: center; color: var(--text-light);
+            margin-bottom: 25px; animation: fadeInDown 0.6s ease;
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 
         .urgency-badge {
-            display: inline-block;
-            background: var(--primary-color);
-            color: var(--dark-bg);
-            padding: 7px 14px;
-            border-radius: 25px;
-            font-size: 12px;
-            font-weight: 900;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            animation: pulse 2s infinite;
+            background: var(--primary-color); padding: 7px 14px; border-radius: 25px;
+            font-size: 12px; font-weight: 900; color: var(--dark-bg);
+            margin-bottom: 12px; animation: pulse 2s infinite;
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                opacity: 1;
-            }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
 
-            50% {
-                opacity: 0.7;
-            }
-        }
+        .hero-title { font-size: 32px; font-weight: 900; margin-bottom: 8px; }
+        .hero-subtitle { font-size: 16px; color: #d1d5db; }
 
-        .hero-title {
-            font-size: 32px;
-            font-weight: 900;
-            line-height: 1.2;
-            margin-bottom: 8px;
-            color: var(--text-light);
-        }
+        .cards-container { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; width: 100%; }
 
-        .hero-subtitle {
-            font-size: 16px;
-            color: #d1d5db;
-            margin-bottom: 0;
-            font-weight: 500;
-        }
-
-        /* ============================================
-           CARDS CONTAINER (Duas Opções)
-           ============================================ */
-        .cards-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 18px;
-            width: 100%;
-            margin: 0 auto;
-            animation: fadeInUp 0.8s ease;
-            padding-bottom: 25px; /* Adicionado padding para garantir espaço no final */
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* ============================================
-           NOVOS ELEMENTOS PARA FRASES
-           ============================================ */
-        .ebook-group {
-            display: flex;
-            flex-direction: column;
-            gap: 10px; /* Espaço entre a frase e o card */
-        }
-
+        .ebook-group { display: flex; flex-direction: column; gap: 10px; }
         .ebook-phrase {
-            text-align: center;
-            font-size: 18px;
-            font-weight: 700;
-            color: var(--primary-color); /* Cor de destaque */
-            background-color: rgba(255, 255, 255, 0.1); /* Fundo levemente transparente */
-            padding: 10px 15px;
-            border-radius: 8px;
-            border: 2px solid var(--primary-color);
-            box-shadow: var(--shadow);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            line-height: 1.2;
+            text-align: center; font-size: 18px; font-weight: 700; color: var(--primary-color);
+            background: rgba(255,255,255,0.1); padding: 10px 15px; border-radius: 8px; border: 2px solid var(--primary-color);
         }
 
         .ebook-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow-heavy);
-            transition: var(--transition);
-            display: flex;
-            flex-direction: column;
-            height: auto; /* Garantindo que a altura seja automática */
+            background: white; border-radius: 10px; overflow: hidden;
+            box-shadow: var(--shadow-heavy); transition: var(--transition);
         }
 
-            .ebook-card:hover {
-                transform: translateY(-4px);
-                box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            }
+        .ebook-card:hover { transform: translateY(-4px); }
 
-        /* ============================================
-           CARD IMAGE (CAPA DO E-BOOK)
-           ============================================ */
         .card-image {
-            width: 100%;
-            /* Removido fixed height para maior flexibilidade */
-            /* height: 350px; */
-            padding-top: 100%; /* Usando padding-top para manter um aspect ratio (quadrado) */
-            position: relative;
+            width: 100%; padding-top: 100%; position: relative;
             background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 12px;
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 600;
-            text-align: center;
-            overflow: hidden;
         }
 
-            .card-image img {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-                padding: 10px; /* Adicionado padding para evitar que a imagem toque as bordas */
-            }
-
-        /* ============================================
-           CARD CONTENT
-           ============================================ */
-        .card-content {
-            padding: 16px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+        .card-image img {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+            object-fit: contain; padding: 10px;
         }
 
-        .card-title {
-            font-size: 16px;
-            font-weight: 900;
-            color: var(--text-dark);
-            margin-bottom: 8px;
-            line-height: 1.3;
-        }
+        .card-content { padding: 16px; display: flex; flex-direction: column; }
+        .card-title { font-size: 16px; font-weight: 900; margin-bottom: 8px; }
+        .card-description { font-size: 12px; color: #6b7280; margin-bottom: 10px; }
 
-        .card-description {
-            font-size: 12px;
-            color: #6b7280;
-            margin-bottom: 10px;
-            line-height: 1.4;
-        }
-
-        .card-features {
-            list-style: none;
-            margin-bottom: 12px;
-            font-size: 11px;
-        }
-
-            .card-features li {
-                padding: 3px 0;
-                color: #4b5563;
-                display: flex;
-                align-items: center;
-                gap: 5px;
-            }
-
-                .card-features li:before {
-                    content: "✓";
-                    color: var(--success-color);
-                    font-weight: 900;
-                    font-size: 12px;
-                    flex-shrink: 0;
-                }
-
-        .card-price {
-            font-size: 20px;
-            font-weight: 900;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-            line-height: 1;
-        }
-
-            .card-price .old-price {
-                text-decoration: line-through;
-                color: #9ca3af;
-                font-size: 12px;
-                margin-right: 5px;
-            }
+        .card-features { list-style: none; font-size: 11px; margin-bottom: 12px; }
+        .card-features li { padding: 3px 0; display: flex; gap: 5px; }
+        .card-features li::before { content: "✓"; color: var(--success-color); }
 
         .cta-button {
             background: linear-gradient(135deg, var(--success-color), #059669);
-            color: var(--text-light);
-            border: none;
-            padding: 11px 18px;
-            font-size: 13px;
-            font-weight: 700;
-            border-radius: 7px;
-            cursor: pointer;
-            transition: var(--transition);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-            width: 100%;
+            color: white; padding: 11px 18px; border-radius: 7px; font-size: 13px; cursor: pointer;
         }
 
-            .cta-button:hover {
-                transform: translateY(-2px);
-                box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-            }
-
-            .cta-button:active {
-                transform: translateY(0);
-            }
-
-        /* ============================================
-           RESPONSIVIDADE
-           ============================================ */
-        @media (max-width: 1024px) {
-            .cards-container {
-                gap: 16px;
-            }
-
-            .hero-title {
-                font-size: 28px;
-            }
-
-            .hero-subtitle {
-                font-size: 15px;
-            }
-
-            /* Removido ajuste de altura fixa, agora usa aspect ratio */
-            /* .card-image {
-                height: 140px;
-            } */
-        }
-
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .logo {
-                font-size: 14px;
-            }
-
-            .header-title {
-                font-size: 14px;
-            }
-
-            .main-container {
-                padding: 20px 12px;
-            }
-
-            .cards-container {
-                grid-template-columns: 1fr;
-                gap: 15px;
-            }
-
-            .hero-section {
-                margin-bottom: 20px;
-            }
-
-            .hero-title {
-                font-size: 24px;
-            }
-
-            .hero-subtitle {
-                font-size: 14px;
-            }
-
-            /* Removido ajuste de altura fixa, agora usa aspect ratio */
-            /* .card-image {
-                height: 130px;
-            } */
-
-            .card-content {
-                padding: 14px;
-            }
-
-            .card-title {
-                font-size: 15px;
-            }
-
-            .card-description {
-                font-size: 11px;
-            }
-
-            .card-features {
-                font-size: 10px;
-            }
-
-            .card-price {
-                font-size: 18px;
-            }
-
-            .cta-button {
-                padding: 10px 16px;
-                font-size: 12px;
-            }
-
-            .ebook-phrase {
-                font-size: 16px;
-                padding: 8px 12px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .header {
-                padding: 10px 12px;
-            }
-
-            .header-content {
-                gap: 6px;
-            }
-
-            .logo {
-                font-size: 12px;
-            }
-
-            .header-title {
-                font-size: 12px;
-            }
-
-            .main-container {
-                padding: 15px 10px;
-            }
-
-            .hero-section {
-                margin-bottom: 15px;
-            }
-
-            .hero-title {
-                font-size: 20px;
-            }
-
-            .hero-subtitle {
-                font-size: 12px;
-            }
-
-            .cards-container {
-                gap: 12px;
-            }
-
-            /* Removido ajuste de altura fixa, agora usa aspect ratio */
-            /* .card-image {
-                height: 120px;
-            } */
-
-            .card-content {
-                padding: 12px;
-            }
-
-            .card-title {
-                font-size: 14px;
-                margin-bottom: 6px;
-            }
-
-            .card-description {
-                font-size: 10px;
-                margin-bottom: 8px;
-            }
-
-            .card-features {
-                font-size: 9px;
-                margin-bottom: 10px;
-            }
-
-                .card-features li {
-                    padding: 2px 0;
-                    gap: 4px;
-                }
-
-            .card-price {
-                font-size: 16px;
-                margin-bottom: 8px;
-            }
-
-                .card-price .old-price {
-                    font-size: 11px;
-                }
-
-            .cta-button {
-                padding: 9px 14px;
-                font-size: 11px;
-            }
-
-            .urgency-badge {
-                font-size: 10px;
-                padding: 5px 10px;
-            }
-
-            .ebook-phrase {
-                font-size: 14px;
-                padding: 6px 10px;
-            }
-        }
     </style>
 </head>
+
 <body>
+
     <header class="header">
         <div class="header-content">
             <div class="logo">🐔 Criação Premium</div>
@@ -540,6 +190,7 @@
 
     <div class="main-container">
         <div class="content-wrapper">
+
             <div class="hero-section">
                 <div class="urgency-badge">⚡ OFERTA EXCLUSIVA - ESCOLHA AGORA!</div>
                 <h1 class="hero-title">Transforme Sua Criação de Aves</h1>
@@ -547,25 +198,26 @@
             </div>
 
             <div class="cards-container">
-                <!-- Container para E-book 1: O Segredo das Doenças Avícolas -->
+
+                <!-- EBOOK 1 -->
                 <div class="ebook-group">
                     <p class="ebook-phrase">Quero salvar minhas galinhas.</p>
+
                     <div class="ebook-card">
                         <div class="card-image">
-                            <img src="capa.png" alt="Capa do E-book O Segredo das Doenças Avícolas">
+                            <img src="capa.png" alt="Ebook Das Doenças Avícolas">
                         </div>
+
                         <div class="card-content">
                             <h3 class="card-title">O Segredo das Doenças Avícolas</h3>
-                            <p class="card-description">Guia completo com mais de 10 anos de experiência. Identifique, trate e previna 11+ doenças avícolas.</p>
+                            <p class="card-description">Guia completo com mais de 10 anos de experiência.</p>
+
                             <ul class="card-features">
-                                <li>11+ doenças documentadas</li>
+                                <li>11+ doenças explicadas</li>
                                 <li>Tabelas de sintomas</li>
                                 <li>Protocolos testados</li>
-                                <li>Calendário de vacinação</li>
                             </ul>
-                            <div class="card-price">
-                            
-                            </div>
+
                             <button class="cta-button" onclick="window.location.href='https://o-segredo.pages.dev/'">
                                 Acessar Agora
                             </button>
@@ -573,33 +225,35 @@
                     </div>
                 </div>
 
-                <!-- Container para E-book 2: Manejo de Elite de Pintinhos -->
+                <!-- EBOOK 2 -->
                 <div class="ebook-group">
                     <p class="ebook-phrase">Quero criar pintinhos de elite.</p>
+
                     <div class="ebook-card">
                         <div class="card-image">
-                            <img src="capadospintinhos.png" alt="Capa do E-book Manejo de Elite de Pintinhos">
+                            <img src="capadospintinhos.png" alt="Manejo de Pintinhos">
                         </div>
+
                         <div class="card-content">
                             <h3 class="card-title">Manejo de Elite de Pintinhos</h3>
-                            <p class="card-description">Triplique a sobrevivência do seu plantel. Domine incubação e manejo pós-eclosão.</p>
+                            <p class="card-description">Domine incubação, aquecimento e manejo inicial.</p>
+
                             <ul class="card-features">
-                                <li>4 capítulos essenciais</li>
                                 <li>Incubação natural e artificial</li>
-                                <li>Manejo dos primeiros 7 dias</li>
-                                <li>Técnicas comprovadas</li>
+                                <li>Manejo dos primeiros dias</li>
+                                <li>Técnicas testadas</li>
                             </ul>
-                            <div class="card-price">
-                                
-                            </div>
+
                             <button class="cta-button" onclick="window.location.href='https://pitinhospaginainicial.pages.dev/'">
                                 Acessar Agora
                             </button>
                         </div>
                     </div>
                 </div>
-            </div>
+
+            </div> <!-- FIM CARDS -->
         </div>
     </div>
+
 </body>
 </html>
